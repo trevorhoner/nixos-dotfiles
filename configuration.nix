@@ -27,7 +27,6 @@
 	windowManager.qtile.enable = true;
   };
 
-
   users.users.trevor = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; 
