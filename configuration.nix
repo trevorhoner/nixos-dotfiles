@@ -3,7 +3,7 @@
 {
   imports =
     [ 
-      ./hardware-configuration.nix
+      ./hosts/battlestation/hardware-configuration.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
