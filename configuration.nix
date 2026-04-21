@@ -9,6 +9,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  #Networking-----------------------------------
   networking.hostName = "battlestation"; 
   networking.networkmanager.enable = true;
 
@@ -19,6 +20,11 @@
 
   time.timeZone = "America/New_York";
 
+  #Bluetooth--------------------------------------
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
+  #Display-Manager------------------------------
   services.displayManager.ly.enable = true;
   services.xserver = {
 	enable = true;
