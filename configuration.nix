@@ -49,6 +49,7 @@
     maim
     bluez
     xscreensaver
+    brave
   ];
 
   fonts.packages = with pkgs; [
