@@ -13,7 +13,7 @@ in
       "oxwm"      = { source = link "oxwm"; };
     };
 
-    programs.git = {
+    programs.git= {
       enable = true;
       userName = "Trevor";
       userEmail = "thoner1@protonmail.com";
@@ -23,7 +23,7 @@ in
       };
     };
 
-    programs.ssh = {
+    programs.ssh= {
       enable = true;
       addKeysToAgent = "yes";
       extraConfig = ''
