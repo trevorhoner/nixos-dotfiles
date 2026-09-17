@@ -42,7 +42,22 @@ in
 	      btw = "echo I use nixos, btw";
         nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#battlestation"; 
         nrs-dry = "sudo nixos-rebuild test --flake ~/nixos-dotfiles#battlestation"; 
-	};
+	    };
+    };
+
+    qt = {
+      enable = true;
+      platformTheme.name = "qtct";
+      style.name = "Fusion";
+      qt6ctSettings = {
+        Appearance = {
+          style = "Fusion";
+          custom_palette = true;
+          color_scheme_path = "${pkgs.libsForQt5.qt5ct}/share/qt5ct/colors/darker.conf";
+          icon_theme = "Papirus-Dark";
+          standard_dialogs = "xdgdesktopportal";
+        };
+      };
     };
     
     home.packages = with pkgs; [
@@ -56,6 +71,9 @@ in
       fastfetch
       freecad
       transmission_4-qt
+      qt6Packages.qt6ct
+      libsForQt5.qt5ct
+      papirus-icon-theme
       iwd
       thunar
       wineWow64Packages.stableFull
