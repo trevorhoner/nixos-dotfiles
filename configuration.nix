@@ -16,7 +16,7 @@
   networking.hostName = "battlestation"; 
   networking.networkmanager.enable = true;
   networking.wg-quick.interfaces.wg0 = {
-    autostart = true;
+    autostart = false;
     configFile = "/etc/wireguard/NixOS-FL.conf";
   };
 
