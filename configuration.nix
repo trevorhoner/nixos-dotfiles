@@ -89,6 +89,7 @@
     (python314.withPackages (ps: with ps; [
       openpyxl
       pandas
+      numpy
       pytest
     ]))
   ];
