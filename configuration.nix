@@ -86,12 +86,19 @@
     udisks
     v4l-utils
     ffmpeg
+    feh
+    gtk-engine-murrine
+    gobject-introspection
     (python314.withPackages (ps: with ps; [
       openpyxl
       pandas
       numpy
       pytest
+      pywal16
+      pillow
+      pygobject3
     ]))
+    imagemagick
   ];
 
   fonts.packages = with pkgs; [
