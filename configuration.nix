@@ -40,17 +40,6 @@
 	autoRepeatInterval = 35;
 	windowManager.oxwm = {
     enable = true;
-    #package =
-    #  let
-    #    orig = pkgs.python3Packages.qtile;
-    #  in
-     # orig // {
-      #  inherit (orig) pythonModule;
-      #  override = args:
-      #    (orig.override args).overridePythonAttrs {
-       #     doCheck = false;
-         # };
-        #};
       };
    };
 
@@ -65,6 +54,8 @@
       tree
     ];
   };
+
+  security.sudo.wheelNeedsPassword = false;
 
   security.rtkit.enable = true;
   services.pipewire = {
