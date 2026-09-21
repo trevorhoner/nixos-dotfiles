@@ -11,6 +11,7 @@ in
       "qtile"     = { source = link "qtile"; };
       "rofi"      = { source = link "rofi"; };
       "oxwm"      = { source = link "oxwm"; };
+      "wpg"       = { source = link "wpg"; };
     };
 
     programs.git= {
@@ -86,6 +87,7 @@ in
       restic
       udisks
       steam 
+      wpgtk
       gamescope
       discord
       nanosaur
