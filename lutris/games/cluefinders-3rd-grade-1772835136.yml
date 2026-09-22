@@ -1,0 +1,40 @@
+game:
+  exe: /home/trevor/Games/Lutris/cluefinders-3rd-grade/drive_c/Program Files (x86)/DOSBox.exe
+  prefix: /home/trevor/Games/Lutris/cluefinders-3rd-grade
+game_slug: cluefinders-3rd-grade
+name: 'Cluefinders: 3rd Grade'
+script:
+  files:
+  - setupfile: N/A:Select the setup file
+  game:
+    exe: _xXx_AUTO_WIN32_xXx_
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      env:
+        LC_ALL: ''
+      executable: /home/trevor/Desktop/cluefindersmsi/ClueFinders 3rd Grade.msi
+      prefix: /home/trevor/Games/Lutris/cluefinders-3rd-grade
+      wine_path: /usr/bin/wine
+  system:
+    env:
+      LC_ALL: ''
+slug: cluefinders-3rd-grade-setup
+system:
+  display: primary
+  env:
+    LC_ALL: ''
+  gamescope: false
+  gamescope_game_res: 640x400
+  gamescope_window_mode: -f
+  resolution: 640x480
+  sdl_video_fullscreen: '0'
+version: Setup file
+wine:
+  Desktop: false
+  Dpi: false
+  d3d_extras: false
+  dxvk: false
+  version: wine-ge-8-26-x86_64
+  vkd3d: false

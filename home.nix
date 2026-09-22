@@ -1,8 +1,13 @@
 { config, pkgs, ... }:
 # Line 33 = package list
 let
-  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
+  home = config.home.homeDirectory;
+
+  dotfiles = "${home}/nixos-dotfiles/config";
   link = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
+
+  lutrisRepo = "${home}/nixos-dotfiles/lutris";
+  lutrisLink = path: config.lib.file.mkOutOfStoreSymlink "${lutrisRepo}/${path}";
 in
 {
     xdg.configFile = { 
@@ -12,6 +17,15 @@ in
       "rofi"      = { source = link "rofi"; };
       "oxwm"      = { source = link "oxwm"; };
       "wpg"       = { source = link "wpg"; };
+    };
+
+    xdg.dataFile = {
+      "lutris/games".source         = lutrisLink "games";
+      "lutris/system.yml".source    = lutrisLink  "system.yml";
+      "lutris/lutris.conf".source   = lutrisLink  "lutris.conf";
+      "lutris/pga.db".source        = lutrisLink  "pga.db";
+      "lutris/banners".source       = lutrisLink  "banners";
+      "lutris/coverart".source      = lutrisLink  "coverart";
     };
 
     programs.git= {

@@ -1,0 +1,42 @@
+game:
+  args: '"/home/trevor/Games/Lutris/3-d-ultra-pinball-creep-night/CD/3-D_Ultra_Pinball_Creep_Night_Sierra_1996.iso"'
+  exe: /home/trevor/Games/Lutris/3-d-ultra-pinball-creep-night/DOSBoxPure_x86_64
+  working_dir: /home/trevor/Games/Lutris/3-d-ultra-pinball-creep-night
+game_slug: 3-d-ultra-pinball-creep-night
+name: '3-D Ultra Pinball: Creep Night'
+script:
+  files:
+  - os_img: https://lutris.nyc3.cdn.digitaloceanspaces.com/games/Windows_95/WIN95_OSR25_DBP_2Go.7z
+  - dbpu_file: https://github.com/legluondunet/mlls-tools/raw/refs/heads/master/DOSBox/dosbox-pure-unleashed.tar.xz
+  - dbpu_save:
+      filename: 3-D_Ultra_Pinball_Creep_Night_Sierra_1996.pure.zip
+      url: https://github.com/legluondunet/MyLittleLutrisScripts/raw/refs/heads/master/Windows%2095/DOSBox-pure.pure.zip
+  - game_cd:
+      filename: 3-D_Ultra_Pinball_Creep_Night_Sierra_1996.iso
+      url: https://archive.org/download/3-D_Ultra_Pinball_Creep_Night_Sierra_1996/3-D_Ultra_Pinball_Creep_Night_Sierra_1996.iso
+  game:
+    args: '"$GAMEDIR/CD/3-D_Ultra_Pinball_Creep_Night_Sierra_1996.iso"'
+    exe: $GAMEDIR/DOSBoxPure_x86_64
+    working_dir: $GAMEDIR
+  installer:
+  - extract:
+      dst: $GAMEDIR
+      file: dbpu_file
+  - extract:
+      dst: $GAMEDIR/system
+      src: os_img
+  - merge:
+      dst: $GAMEDIR/saves
+      src: dbpu_save
+  - merge:
+      dst: $GAMEDIR/CD
+      src: game_cd
+slug: 3-d-ultra-pinball-creep-night-cd-windows-95
+system:
+  display: primary
+  gamescope: true
+  gamescope_game_res: 640x480
+  resolution: 640x480
+  sdl_video_fullscreen: '0'
+version: CD + Windows 95
+year: 1996

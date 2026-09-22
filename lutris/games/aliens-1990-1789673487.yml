@@ -1,0 +1,6 @@
+game:
+  main_file: /home/trevor/Games/ROMs/MAME/aliens.zip
+mame:
+  crt: false
+system:
+  gamescope: false

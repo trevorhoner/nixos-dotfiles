@@ -1,0 +1,12 @@
+game:
+  exe: /home/trevor/Games/Lutris/cluefinders-4th-grade-adventures/drive_c/Program
+    Files (x86)/ClueFinders 4th Grade/4THADV32.EXE
+system:
+  display: primary
+  gamescope: true
+  gamescope_game_res: 640x480
+  reset_desktop: true
+  resolution: 640x480
+  sdl_video_fullscreen: '0'
+wine:
+  version: system

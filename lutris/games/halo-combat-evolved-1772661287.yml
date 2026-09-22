@@ -1,0 +1,101 @@
+game:
+  exe: /home/trevor/Games/Lutris/halo-combat-evolved/drive_c/Program Files (x86)/Microsoft
+    Games/Halo Custom Edition/haloce.exe
+  prefix: /home/trevor/Games/Lutris/halo-combat-evolved
+game_slug: halo-combat-evolved
+name: 'Halo: Combat Evolved'
+script:
+  files:
+  - setup: http://vaporeon.io/hosted/halo/original_files/halocesetup_en_1.00.exe
+  - patch: http://vaporeon.io/hosted/halo/original_files/update_installers/haloce-patch-1.0.10.exe
+  - chimera: https://github.com/SnowyMouse/chimera/releases/download/1.0.0r1096/chimera-1.0.0r1096.55407763.7z
+  - refined: https://www.proxeninc.net/Halo/Refined/Refined%20V4Beta%20Download/halo_refined_custom_edition_en_v4beta2.7z
+  - censhine: https://github.com/Sledmine/censhine/releases/download/1.0.0/EffectCollection_ps_2_0.enc
+  - dsoal: http://vaporeon.io/hosted/dsoal-builds/dsoal-latest.7z
+  - dgvoodoo2: http://vaporeon.io/hosted/software/dgVoodoo2_8_2_unpacked.7z
+  game:
+    exe: drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/haloce.exe
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      prefix: /home/trevor/Games/halo-combat-evolved
+      wine_path: /usr/bin/wine
+  - task:
+      app: msxml4
+      arch: win64
+      prefix: /home/trevor/Games/halo-combat-evolved
+      wine_path: /usr/bin/wine
+  - task:
+      app: mfc42
+      arch: win64
+      prefix: /home/trevor/Games/halo-combat-evolved
+      wine_path: /usr/bin/wine
+  - task:
+      arch: win64
+      env: {}
+      executable: /home/trevor/.cache/lutris/installer/halo-combat-evolved/setup/halocesetup_en_1.00.exe
+      prefix: /home/trevor/Games/halo-combat-evolved
+      wine_path: /usr/bin/wine
+  - task:
+      arch: win64
+      env: {}
+      executable: /home/trevor/.cache/lutris/installer/halo-combat-evolved/patch/haloce-patch-1.0.10.exe
+      prefix: /home/trevor/Games/halo-combat-evolved
+      wine_path: /usr/bin/wine
+  - move:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/strings-old.dll
+      src: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/strings.dll
+  - extract:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/
+      file: chimera
+  - move:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/maps-old
+      src: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/maps
+  - extract:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/maps/
+      file: refined
+  - move:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/shaders/EffectCollection_ps_2_0-old.enc
+      src: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/shaders/EffectCollection_ps_2_0.enc
+  - copy:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/shaders/
+      src: censhine
+  - extract:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/
+      file: dsoal
+  - extract:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/dgVoodoo2/
+      file: dgvoodoo2
+  - merge:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/
+      src: $GAMEDIR/drive_c/Program Files (x86)/dgVoodoo2/MS/x86/
+  - copy:
+      dst: $GAMEDIR/drive_c/Program Files (x86)/Microsoft Games/Halo Custom Edition/
+      src: $GAMEDIR/drive_c/Program Files (x86)/dgVoodoo2/dgVoodoo.conf
+  wine:
+    overrides:
+      D3D8: n,b
+      D3D9: n,b
+      D3DImm: n,b
+      DDraw: n,b
+      dsound: n,b
+slug: halo-combat-evolved-custom-edition-1010
+system:
+  prefer_system_libs: true
+version: Custom Edition 1.0.10 + Fixes
+wine:
+  battleye: false
+  dxvk: true
+  eac: false
+  esync: false
+  fsr: false
+  fsync: false
+  overrides:
+    D3D8: n,b
+    D3D9: n,b
+    D3DImm: n,b
+    DDraw: n,b
+    dsound: n,b
+  version: ge-proton
+year: 2001

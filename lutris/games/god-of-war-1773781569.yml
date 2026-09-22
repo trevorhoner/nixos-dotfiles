@@ -1,0 +1,15 @@
+game:
+  main_file: /home/trevor/Games/ROMs/PS2/God of War (USA).iso
+game_slug: god-of-war
+name: God of War
+script:
+  files:
+  - iso: N/A:Select the game's ISO file
+  game:
+    main_file: iso
+  version: Playstation 2
+slug: god-of-war-ps2
+system:
+  gamescope: true
+version: Sony PlayStation 2
+year: 2005
