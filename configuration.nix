@@ -97,6 +97,10 @@
       pywal16
       pillow
       pygobject3
+      nltk
+      nameparser
+      dateparser
+      spacy
     ]))
     imagemagick
   ];
