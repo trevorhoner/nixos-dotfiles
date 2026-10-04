@@ -1,0 +1,30 @@
+game:
+  exe: /home/trevor/Games/Lutris/aliens-vs-predator-1999/drive_c/Program Files (x86)/Fox/Aliens
+    versus Predator/AvP.exe
+  prefix: /home/trevor/Games/Lutris/aliens-vs-predator-1999
+game_slug: aliens-vs-predator-1999
+name: Aliens vs. Predator (1999)
+script:
+  files:
+  - setupfile: N/A:Select the setup file
+  game:
+    exe: _xXx_AUTO_WIN32_xXx_
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      env:
+        LC_ALL: ''
+      executable: /home/trevor/Games/Windows/aliens-versus-predator-1999/Setup.exe
+      prefix: /home/trevor/Games/Lutris/aliens-vs-predator-1999
+      wine_path: /etc/profiles/per-user/trevor/bin/wine
+  system:
+    env:
+      LC_ALL: ''
+slug: aliens-vs-predator-1999-setup
+system:
+  env:
+    LC_ALL: ''
+  gamescope: true
+  gamescope_output_res: 1920x1080
+version: Setup file

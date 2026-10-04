@@ -1,0 +1,9 @@
+dosbox:
+  exit: false
+  fullscreen: false
+game:
+  main_file: /home/trevor/Games/Lutris/dos/conf/centipede.conf
+system:
+  gamescope: true
+  gamescope_window_mode: ''
+  resolution: 1920x1080

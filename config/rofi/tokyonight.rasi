@@ -11,13 +11,13 @@
     primary: #444b6a;  // TokyoNight bright black
     ug: #0B2447;
     font: "Monospace 11";
-    background-color: @bg;
     //dark: @bg;
     border: 0px;
     kl: #7aa2f7;
     black: #000000;
-
-    transparent: rgba(46,52,64,0);
+    background-color: transparent;
+    transparency: "real";
+    transparent: rgba(60,20,64,0.8);
 }
 
 // defines different aspects of the window
@@ -109,7 +109,7 @@ element normal active {
 element-icon {
     background-color: inherit;
     text-color: inherit;
-    size: 2.5em;
+    size: 3.5em;
 }
 
 element normal urgent {

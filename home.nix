@@ -98,6 +98,7 @@ in
       grub2
       os-prober
       unzip
+      _7zz
       restic
       udisks
       steam 

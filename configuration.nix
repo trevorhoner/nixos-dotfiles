@@ -58,11 +58,20 @@
   security.sudo.wheelNeedsPassword = false;
 
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
     wireplumber.enable = true;
+  };
+
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    vSync = true;
+    fade = false;
+    shadow = false;
   };
 
   programs.firefox.enable = true;
@@ -72,6 +81,7 @@
     wget
     git
     alacritty
+    picom
     htop
     lutris
     wireguard-tools

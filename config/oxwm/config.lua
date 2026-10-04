@@ -42,8 +42,8 @@ local colors = {
 }
 
 -- Workspace tags - can be numbers, names, or icons (requires a Nerd Font)
- local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
--- local tags = { "", "󰊯", "", "", "󰙯", "󱇤", "", "󱘶", "󰧮" } -- Example of nerd font icon tags
+local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
+--local tags = { "", "󰊯", "", "", "󰙯", "󱇤", "", "󱘶", "󰧮" } -- Example of nerd font icon tags
 
 -- Font for the status bar (use "fc-list" to see available fonts)
 local bar_font = "monospace:style=Bold:size=14"
@@ -169,7 +169,17 @@ oxwm.rule.add({ instance = "gimp", floating = true })
 
 -- To find window properties, use xprop and click on the window
 -- WM_CLASS(STRING) shows both instance and class (instance, class)
+--
+-- Lutris / Wine: never tile these
+oxwm.rule.add({ class    = "lutris-wine",     floating = true })
+oxwm.rule.add({ class    = "Wine",            floating = true })
+oxwm.rule.add({ class    = "winecfg.exe",     floating = true })
+oxwm.rule.add({ instance = "winecfg.exe",     floating = true })
+oxwm.rule.add({ class    = "explorer.exe",    floating = true })
+oxwm.rule.add({ title    = "Wine configuration", floating = true })
 
+-- many games report their .exe as class/instance
+oxwm.rule.add({ instance = ".exe",            floating = true })
 -------------------------------------------------------------------------------
 -- Status Bar Configuration
 -------------------------------------------------------------------------------
