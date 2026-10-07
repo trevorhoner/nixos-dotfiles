@@ -26,5 +26,6 @@ system:
   env:
     LC_ALL: ''
   gamescope: true
+  gamescope_game_res: 1920x1080
   gamescope_output_res: 1920x1080
 version: Setup file

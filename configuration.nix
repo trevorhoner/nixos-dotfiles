@@ -94,6 +94,7 @@
     brave
     usbutils
     udisks
+    unrar
     v4l-utils
     ffmpeg
     feh

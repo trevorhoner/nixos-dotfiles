@@ -1,0 +1,31 @@
+game:
+  exe: /home/trevor/Games/Windows/tamale-loco-II/TamaleLoco.exe
+  prefix: /home/trevor/Games/Lutris/tamale-loco-ii-rumble-in-the-desert
+game_slug: tamale-loco-ii-rumble-in-the-desert
+name: 'Tamale Loco II: Rumble in the Desert'
+script:
+  files:
+  - setupfile: N/A:Select the setup file
+  game:
+    exe: _xXx_AUTO_WIN32_xXx_
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      env:
+        LC_ALL: ''
+      executable: /home/trevor/Games/Windows/tamale-loco-II/UNWISE.EXE
+      prefix: /home/trevor/Games/Lutris/tamale-loco-ii-rumble-in-the-desert
+      wine_path: /etc/profiles/per-user/trevor/bin/wine
+  system:
+    env:
+      LC_ALL: ''
+slug: tamale-loco-ii-rumble-in-the-desert-setup
+system:
+  env:
+    LC_ALL: ''
+  gamescope: true
+  gamescope_game_res: 1920x1080
+  gamescope_hdr: false
+  gamescope_output_res: 1920x1080
+version: Setup file
