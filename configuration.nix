@@ -1,9 +1,12 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports =
     [ 
       ./hardware-configuration.nix
+      ./common/noctalia.nix
+      ./common/noctalia-greeter.nix
+      #./common/oxwm.nix
     ];
 
   #boot.loader.systemd-boot.enable = true;
@@ -27,22 +30,28 @@
 
   time.timeZone = "America/New_York";
 
-  #Bluetooth--------------------------------------
+  #Services-----------------------------
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
   services.udisks2.enable = true;
-  #Display-Manager------------------------------
-  services.displayManager.ly.enable = true;
-  services.xserver = {
-	enable = true;
-	autoRepeatDelay = 200;
-	autoRepeatInterval = 35;
-	windowManager.oxwm = {
-    enable = true;
-      };
-   };
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+  };
+
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    vSync = true;
+    fade = false;
+    shadow = false;
+  };
+#Users------------------------------------
   users.users.trevor = {
     isNormalUser = true;
     extraGroups = [
@@ -59,20 +68,6 @@
 
   security.rtkit.enable = true;
 
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-  };
-
-  services.picom = {
-    enable = true;
-    backend = "glx";
-    vSync = true;
-    fade = false;
-    shadow = false;
-  };
 
   programs.firefox.enable = true;
 
