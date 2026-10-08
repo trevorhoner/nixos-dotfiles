@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 # Line 33 = package list
 let
   home         = config.home.homeDirectory;
@@ -28,9 +28,10 @@ in
       "lutris/coverart".source      = lutris  "coverart";
     };
 
-    xdg.stateFile = {
-      "noctalia/settings.toml".source = link "noctalia/settings.toml";
-    };
+    home.activation.linkNoctaliaSettings = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      ln -sfn "$HOME/nixos-dotfiles/config/noctalia/settings.toml" \
+        "$HOME/.local/state/noctalia/settings.toml"
+    '';
 
     programs.git= {
       enable = true;

@@ -91,6 +91,12 @@ widget_order = [ "lockscreen-login-box@DP-3", "lockscreen-widget-000000000000000
         font_family = "JetBrainsMono Nerd Font"
         format = "{:%l:%M %p}"
 
+[plugin_settings."yugaaank/better-clock"]
+time_format = "{:%l:%M %p}"
+
+[plugins]
+enabled = [ "yugaaank/better-clock" ]
+
 [shell]
 font_family = "DejaVu Sans"
 settings_window_translucent = true
