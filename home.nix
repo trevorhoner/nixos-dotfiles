@@ -2,7 +2,6 @@
 # Line 33 = package list
 let
   home = config.home.homeDirectory;
-
   dotfiles = "${home}/nixos-dotfiles/config";
   link = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
 
@@ -16,6 +15,7 @@ in
       "qtile"     = { source = link "qtile"; };
       "rofi"      = { source = link "rofi"; };
       "oxwm"      = { source = link "oxwm"; };
+      "mango"     = { source = link "mango";};
       "wpg"       = { source = link "wpg"; };
     };
 
@@ -85,6 +85,8 @@ in
       rofi
       fastfetch
       freecad
+      grim
+      slurp
       transmission_4-qt
       qt6Packages.qt6ct
       libsForQt5.qt5ct

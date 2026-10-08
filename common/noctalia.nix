@@ -1,20 +1,13 @@
 { inputs, ... }:
 {
   imports = [
-#     inputs.noctalia.nixosModules.default
-      inputs.mangowm.nixosModules.mango
+      #inputs.noctalia.nixosModules.default
+      inputs.mangowm.nixosModules.mango 
   ];
 
   programs.xwayland.enable = true;
-  programs.mango.enable = true;
+  programs.mango.enable = true; 
   services.displayManager.defaultSession = "mango";
-#    programs.noctalia = {
-#      enable = true;
-#      systemd.enable = true;
-
-      # Enables NetworkManger, Bluetooth, UPower, and a power profile service.
-#      recommendedServices.enable = true;
-#    }
   home-manager.users.trevor = {
     imports = [
       inputs.noctalia.homeModules.default

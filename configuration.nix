@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
       ./common/noctalia.nix
       ./common/noctalia-greeter.nix
-      ./common/mango-settings.nix
+      #./common/mango.nix
       #./common/oxwm.nix
       #./common/mangowm-greeter.nix
     ];
