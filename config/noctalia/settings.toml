@@ -1,0 +1,139 @@
+config_version = 15
+
+[bar.default]
+background_opacity = 0.0
+center = []
+end = [ "media", "tray", "bluetooth", "network", "volume", "brightness", "battery", "control-center", "clock", "session" ]
+font_family = "JetBrainsMono NF"
+font_scale = 1.1999999806284904
+font_weight = 700
+icon_color = "primary"
+margin_ends = 0
+scale = 1.2000000104308128
+thickness = 45
+widget_spacing = 15
+
+[control_center]
+width = 1000
+
+    [control_center.calendar]
+    show_events_card = false
+
+[desktop_widgets]
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[lockscreen]
+blur_intensity = 0.24999999441206455
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-3", "lockscreen-widget-0000000000000001" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 703.0
+    output = "DP-3"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.83999999999999997
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = false
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = false
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 160.0
+    box_width = 448.0
+    cx = 928.0
+    cy = 492.0
+    output = "DP-3"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background_opacity = 0.0
+        background_padding = 8
+        background_radius = 10
+        center_text = true
+        clock_style = "digital"
+        color = "on_surface"
+        font_family = "JetBrainsMono Nerd Font"
+        format = "{:%l:%M %p}"
+
+[shell]
+font_family = "DejaVu Sans"
+settings_window_translucent = true
+
+    [shell.greeter_sync]
+    auto_sync = true
+
+    [shell.launcher]
+    app_grid = true
+    categories = false
+
+    [shell.panel]
+    control_center_placement = "floating"
+    control_center_position = "center"
+    open_near_click_control_center = true
+
+[theme]
+builtin = "Ayu"
+pure_black_dark = true
+wallpaper_scheme = "m3-tonal-spot"
+
+[widget.clock]
+format = "{:%l:%M %p}"
+
+[widget.control-center]
+enabled = false
+
+[widget.launcher]
+enabled = false
+scale = 1.5
+
+[widget.media]
+enabled = false
+
+[widget.network]
+show_label = false
+
+[widget.volume]
+show_label = false
+
+[widget.wallpaper]
+enabled = false
+
+[widget.workspaces]
+capsule_fill = "secondary"
+style = "minimal"

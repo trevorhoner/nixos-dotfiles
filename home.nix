@@ -1,12 +1,12 @@
 { config, pkgs, ... }:
 # Line 33 = package list
 let
-  home = config.home.homeDirectory;
-  dotfiles = "${home}/nixos-dotfiles/config";
-  link = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
+  home         = config.home.homeDirectory;
+  dotfiles     = "${home}/nixos-dotfiles/config";
+  lutrisRepo   = "${home}/nixos-dotfiles/lutris";
 
-  lutrisRepo = "${home}/nixos-dotfiles/lutris";
-  lutrisLink = path: config.lib.file.mkOutOfStoreSymlink "${lutrisRepo}/${path}";
+  link       = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
+  lutris     = path: config.lib.file.mkOutOfStoreSymlink "${lutrisRepo}/${path}";
 in
 {
     xdg.configFile = { 
@@ -20,12 +20,16 @@ in
     };
 
     xdg.dataFile = {
-      "lutris/games".source         = lutrisLink "games";
-      "lutris/system.yml".source    = lutrisLink  "system.yml";
-      "lutris/lutris.conf".source   = lutrisLink  "lutris.conf";
-      "lutris/pga.db".source        = lutrisLink  "pga.db";
-      "lutris/banners".source       = lutrisLink  "banners";
-      "lutris/coverart".source      = lutrisLink  "coverart";
+      "lutris/games".source         = lutris "games";
+      "lutris/system.yml".source    = lutris  "system.yml";
+      "lutris/lutris.conf".source   = lutris  "lutris.conf";
+      "lutris/pga.db".source        = lutris  "pga.db";
+      "lutris/banners".source       = lutris  "banners";
+      "lutris/coverart".source      = lutris  "coverart";
+    };
+
+    xdg.stateFile = {
+      "noctalia/settings.toml".source = link "noctalia/settings.toml";
     };
 
     programs.git= {
