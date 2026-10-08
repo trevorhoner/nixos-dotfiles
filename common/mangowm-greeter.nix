@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  programs.greetd.enable = true;
 
   services.greetd = {
     enable = true;

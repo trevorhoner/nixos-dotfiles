@@ -2,15 +2,22 @@
   description = "Build NixOS from scratch!";
 
     inputs = {
-    	nixpkgs.url = "nixpkgs/nixos-unstable";
+    	nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+      nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
       mangowm = {
         url = "github:mangowm/mango";
-        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
       };
 
       noctalia = {
         url = "github:noctalia-dev/noctalia";
-        inputs.nixpkgs.follows = "nixpkgs";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
+      };
+
+      noctalia-greeter = {
+        url = "github:noctalia-dev/noctalia-greeter";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
       };
 
 	    home-manager = {
@@ -19,8 +26,9 @@
 	    };
     };
   
-    outputs = { nixpkgs, home-manager, ... }: {
+    outputs = inputs@{ nixpkgs, home-manager, ... }: {
 	    nixosConfigurations.battlestation = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
 	      system = "x86_64-linux";
 	      modules = [
           ./configuration.nix

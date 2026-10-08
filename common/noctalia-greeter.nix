@@ -1,14 +1,18 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
-  services.displayManger.noctalia-greeter = {
+  imports = [
+    inputs.noctalia-greeter.nixosModules.default
+  ];
+
+  services.displayManager.noctalia-greeter = {
     enable = true;
     settings = {
-      cursor.size = 24;
       keyboard.layout = "us";
-    };
-    cursorTheme = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      cursor = {
+        theme = "Bibata-Modern-Ice";
+        size = 24;
+        path = pkgs.bibata-cursors;
+      };
     };
   };
 }

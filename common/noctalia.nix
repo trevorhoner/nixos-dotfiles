@@ -1,22 +1,28 @@
 { inputs, ... }:
 {
-  home-manager.users.drfoobar = {
+  imports = [
+#     inputs.noctalia.nixosModules.default
+      inputs.mangowm.nixosModules.mango
+  ];
+
+  programs.xwayland.enable = true;
+  programs.mango.enable = true;
+  services.displayManager.defaultSession = "mango";
+#    programs.noctalia = {
+#      enable = true;
+#      systemd.enable = true;
+
+      # Enables NetworkManger, Bluetooth, UPower, and a power profile service.
+#      recommendedServices.enable = true;
+#    }
+  home-manager.users.trevor = {
     imports = [
       inputs.noctalia.homeModules.default
     ];
 
-    programs.xwayland.enable = true;
-
-    #Using MangoWM-----
-    programs.mango.enable = true;
     programs.noctalia = {
-      enable = true;
-
-      # Enables NetworkManger, Bluetooth, UPower, and a power profile service.
-      recommendedServices.enable = true;
-
+      enable = true;  
       systemd.enable = true;
-
       settings = { # This may also be a string or path to a .toml file.
         shell.launch_apps_as_systemd_services = true;
 

@@ -6,7 +6,9 @@
       ./hardware-configuration.nix
       ./common/noctalia.nix
       ./common/noctalia-greeter.nix
+      ./common/mango-settings.nix
       #./common/oxwm.nix
+      #./common/mangowm-greeter.nix
     ];
 
   #boot.loader.systemd-boot.enable = true;
@@ -81,10 +83,11 @@
     lutris
     wireguard-tools
     wireguard-ui
-    fuseiso
     xclip
     maim
     bluez
+    fuseiso
+    gtk-engine-murrine
     xscreensaver
     brave
     usbutils
@@ -93,7 +96,6 @@
     v4l-utils
     ffmpeg
     feh
-    gtk-engine-murrine
     gobject-introspection
     (python314.withPackages (ps: with ps; [
       openpyxl
