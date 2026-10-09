@@ -1,7 +1,7 @@
 config_version = 15
 
 [bar.default]
-background_opacity = 0.0
+background_opacity = 0.59999998658895493
 center = []
 end = [ "media", "tray", "bluetooth", "network", "volume", "brightness", "battery", "control-center", "clock", "session" ]
 font_family = "JetBrainsMono NF"
@@ -114,9 +114,24 @@ settings_window_translucent = true
     open_near_click_control_center = true
 
 [theme]
-builtin = "Ayu"
+builtin = "Tokyo-Night"
 pure_black_dark = true
-wallpaper_scheme = "m3-tonal-spot"
+source = "wallpaper"
+wallpaper_scheme = "m3-rainbow"
+
+[wallpaper]
+directory = "/home/trevor/Pictures/Wallpapers"
+directory_dark = "/home/trevor/Pictures/Wallpapers"
+directory_light = "/home/trevor/Pictures/Wallpapers"
+
+    [wallpaper.default]
+    path = "/home/trevor/Pictures/Wallpapers/glacier_nationalpark.jpg"
+
+    [wallpaper.last]
+    path = "/home/trevor/Pictures/Wallpapers/glacier_nationalpark.jpg"
+
+    [wallpaper.monitors.DP-3]
+    path = "/home/trevor/Pictures/Wallpapers/glacier_nationalpark.jpg"
 
 [widget.clock]
 format = "{:%l:%M %p}"
