@@ -4,11 +4,6 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./common/noctalia.nix
-      ./common/noctalia-greeter.nix
-      #./common/mango.nix
-      #./common/oxwm.nix
-      #./common/mangowm-greeter.nix
     ];
 
   #boot.loader.systemd-boot.enable = true;
@@ -18,7 +13,7 @@
   boot.loader.grub.useOSProber = true;
 
   #Networking-----------------------------------
-  networking.hostName = "battlestation"; 
+  networking.hostName = "thinkpad-p52"; 
   networking.networkmanager.enable = true;
   networking.wg-quick.interfaces.wg0 = {
     autostart = false;
@@ -54,6 +49,13 @@
     shadow = false;
   };
 #Users------------------------------------
+	home-manager = {
+	  useGlobalPkgs = true;
+	  useUserPackages = true;
+	  users.trevor = import ./home.nix;
+	  backupFileExtension = "backup";
+	};
+
   users.users.trevor = {
     isNormalUser = true;
     extraGroups = [
@@ -72,6 +74,15 @@
 
 
   programs.firefox.enable = true;
+  
+  programs.bash = {
+	  enable = true;
+	  shellAliases = { 
+	    btw = "echo I use nixos, btw";
+      nrs = "sudo nixos-rebuild switch --flake ~/.nixos-dotfiles#thinkpad-p52"; 
+      nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#thinkpad-p52"; 
+	  };
+  };
 
   environment.systemPackages = with pkgs; [
     vim 

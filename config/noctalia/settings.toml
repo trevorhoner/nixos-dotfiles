@@ -36,7 +36,12 @@ blur_intensity = 0.24999999441206455
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
-widget_order = [ "lockscreen-login-box@DP-3", "lockscreen-widget-0000000000000001" ]
+widget_order = [
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-login-box@DP-3",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002"
+]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -70,6 +75,33 @@ widget_order = [ "lockscreen-login-box@DP-3", "lockscreen-widget-000000000000000
         show_unlock_hint = false
         show_weather = true
 
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 416.0
+    cx = 952.0
+    cy = 889.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = false
+        show_login_button = false
+        show_media = false
+        show_session_buttons = false
+        show_unlock_hint = false
+        show_weather = false
+
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 160.0
     box_width = 448.0
@@ -89,6 +121,20 @@ widget_order = [ "lockscreen-login-box@DP-3", "lockscreen-widget-000000000000000
         clock_style = "digital"
         color = "on_surface"
         font_family = "JetBrainsMono Nerd Font"
+        format = "{:%l:%M %p}"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 540.0
+    output = "eDP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
         format = "{:%l:%M %p}"
 
 [plugin_settings."yugaaank/better-clock"]
@@ -113,6 +159,9 @@ settings_window_translucent = true
     control_center_position = "center"
     open_near_click_control_center = true
 
+    [shell.shadow]
+    direction = "up"
+
 [theme]
 builtin = "Tokyo-Night"
 pure_black_dark = true
@@ -120,18 +169,18 @@ source = "wallpaper"
 wallpaper_scheme = "m3-rainbow"
 
 [wallpaper]
-directory = "/home/trevor/Pictures/Wallpapers"
-directory_dark = "/home/trevor/Pictures/Wallpapers"
-directory_light = "/home/trevor/Pictures/Wallpapers"
+directory = "/home/trevor/.nixos-dotfiles/wallpaper"
+directory_dark = "/home/trevor/.nixos-dotfiles/wallpaper"
+directory_light = "/home/trevor/.nixos-dotfiles/wallpaper"
 
     [wallpaper.default]
-    path = "/home/trevor/Pictures/Wallpapers/glacier_nationalpark.jpg"
+    path = "/home/trevor/.nixos-dotfiles/wallpaper/glacier_nationalpark.jpg"
 
     [wallpaper.last]
-    path = "/home/trevor/Pictures/Wallpapers/glacier_nationalpark.jpg"
+    path = "/home/trevor/.nixos-dotfiles/wallpaper/glacier_nationalpark.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/trevor/Pictures/Wallpapers/glacier_nationalpark.jpg"
+    path = "/home/trevor/.nixos-dotfiles/wallpaper/glacier_nationalpark.jpg"
 
 [widget.clock]
 format = "{:%l:%M %p}"

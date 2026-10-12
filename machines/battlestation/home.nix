@@ -1,9 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 # Line 33 = package list
 let
+
   home         = config.home.homeDirectory;
-  dotfiles     = "${home}/nixos-dotfiles/config";
-  lutrisRepo   = "${home}/nixos-dotfiles/lutris";
+  dotfiles     = "${home}/.nixos-dotfiles/config";
+  lutrisRepo   = "${home}/.nixos-dotfiles/lutris";
 
   link       = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
   lutris     = path: config.lib.file.mkOutOfStoreSymlink "${lutrisRepo}/${path}";
@@ -28,27 +29,28 @@ in
       "lutris/coverart".source      = lutris  "coverart";
     };
 
-    home.activation.linkNoctaliaSettings = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      ln -sfn "$HOME/nixos-dotfiles/config/noctalia/settings.toml" \
-        "$HOME/.local/state/noctalia/settings.toml"
-    '';
+    xdg.stateFile = {
+      "noctalia/settings.toml".source   = link "noctalia/settings.toml";
+    };
 
     programs.git= {
       enable = true;
-      userName = "Trevor";
-      userEmail = "thoner1@protonmail.com";
-      extraConfig = {
+      settings = {
+        user.name = "Trevor";
+        user.email = "thoner1@protonmail.com";
         init.defaultBranch = "main";
         url."git@github.com:".insteadOf = "https://github.com";
       };
     };
 
-    programs.ssh= {
+    programs.ssh = {
       enable = true;
-      addKeysToAgent = "yes";
+      enableDefaultConfig = false;
+      settings."*".AddKeysToAgent = "yes";
       extraConfig = ''
         Host github.com
-          HostName github.com
+          HostName ssh.github.com
+          Port 443
           User git
           IdentityFile ~/.ssh/Battlestation
           IdentitiesOnly yes
@@ -60,8 +62,8 @@ in
 	    enable = true;
 	    shellAliases = { 
 	      btw = "echo I use nixos, btw";
-        nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#battlestation"; 
-        nrs-dry = "sudo nixos-rebuild test --flake ~/nixos-dotfiles#battlestation"; 
+        nrs = "sudo nixos-rebuild switch --flake ~/.nixos-dotfiles#battlestation"; 
+        nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#battlestation"; 
 	    };
     };
 

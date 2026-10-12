@@ -1,5 +1,7 @@
 {
-  description = "Build NixOS from scratch!";
+  description = "Multi-host NixOS for multiple machines";
+    
+    inputs.nur.url = "github:nix-community/NUR";
 
     inputs = {
     	nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
@@ -26,22 +28,23 @@
 	    };
     };
   
-    outputs = inputs@{ nixpkgs, home-manager, ... }: {
-	    nixosConfigurations.battlestation = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-	      system = "x86_64-linux";
-	      modules = [
-          ./configuration.nix
-		      home-manager.nixosModules.home-manager
-		  {
-		    home-manager = {
-			  useGlobalPkgs = true;
-			  useUserPackages = true;
-			  users.trevor = import ./home.nix;
-			  backupFileExtension = "backup";
-		    };
-		  }
-	      ];
+    outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+      let
+        mkMachine = hostname: nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {inherit inputs hostname; };
+          modules = [
+            ./machines/${hostname}
+            ./modules
+            home-manager.nixosModules.home-manager
+            { networking.hostName = hostname; }
+          ];
+        };
+      in 
+      {
+	      nixosConfigurations ={
+          battlestation = mkMachine "battlestation";
+          thinkpad-p52        = mkMachine "thinkpad-p52";
+       };
       };
-    };
 }
