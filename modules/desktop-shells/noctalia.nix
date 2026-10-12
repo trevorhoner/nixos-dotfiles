@@ -1,7 +1,6 @@
 { inputs, ... }:
 {
   imports = [
-      #inputs.noctalia.nixosModules.default
       inputs.mangowm.nixosModules.mango 
   ];
 

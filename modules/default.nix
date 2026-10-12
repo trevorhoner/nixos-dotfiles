@@ -1,7 +1,7 @@
 {
   imports = [
-    ./noctalia.nix
-    ./noctalia-greeter.nix
+    ./desktop-shells/noctalia.nix
+    ./greeters/noctalia-greeter.nix
     ./pvpn.nix
   ];
 }
