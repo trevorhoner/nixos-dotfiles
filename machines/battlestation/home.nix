@@ -102,6 +102,8 @@ in
       papirus-icon-theme
       iwd
       thunar
+      proton-vpn
+      proton-vpn-cli
       wineWow64Packages.stableFull
       winetricks
       mono
