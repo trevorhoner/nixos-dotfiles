@@ -3,6 +3,9 @@ config_version = 15
 [bar.default]
 background_opacity = 0.0
 capsule = true
+capsule_fill = "surface"
+capsule_opacity = 0.43999999016523361
+capsule_radius = 8
 center = []
 end = [ "media", "tray", "bluetooth", "network", "volume", "brightness", "battery", "control-center", "clock", "session" ]
 font_family = "JetBrainsMono NF"
@@ -189,4 +192,5 @@ enabled = false
 [widget.workspaces]
 capsule = true
 hide_when_empty = true
+label_source = "name"
 labels_only_when_occupied = true
