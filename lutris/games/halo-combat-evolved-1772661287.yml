@@ -82,6 +82,7 @@ script:
       dsound: n,b
 slug: halo-combat-evolved-custom-edition-1010
 system:
+  gamescope: false
   prefer_system_libs: true
 version: Custom Edition 1.0.10 + Fixes
 wine:

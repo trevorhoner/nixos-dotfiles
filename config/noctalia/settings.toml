@@ -190,7 +190,6 @@ show_label = false
 enabled = false
 
 [widget.workspaces]
-capsule = true
 hide_when_empty = true
 label_source = "name"
 labels_only_when_occupied = true
