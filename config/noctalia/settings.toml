@@ -101,10 +101,10 @@ widget_order = [
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = false
-        show_media = true
+        show_media = false
         show_session_buttons = true
         show_unlock_hint = false
-        show_weather = true
+        show_weather = false
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
     box_height = 196.0
@@ -157,8 +157,12 @@ widget_order = [
 [plugin_settings."yugaaank/better-clock"]
 time_format = "{:%l:%M %p}"
 
+[plugin_settings."yuuto/calculator"]
+panel_layer = "overlay"
+panel_placement = "floating"
+
 [plugins]
-enabled = [ "yugaaank/better-clock" ]
+enabled = [ "yugaaank/better-clock", "yuuto/calculator" ]
 
 [shell]
 font_family = "DejaVu Sans"

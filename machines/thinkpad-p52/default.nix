@@ -4,6 +4,8 @@
   imports =
     [ 
       ./hardware-configuration.nix
+      ../..modules/desktop-shells/noctalia.nix
+      ../..modules/greeters/noctalia-greeter.nix
     ];
 
   #boot.loader.systemd-boot.enable = true;

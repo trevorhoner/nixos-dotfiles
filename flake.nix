@@ -35,7 +35,6 @@
           specialArgs = {inherit inputs hostname; };
           modules = [
             ./machines/${hostname}
-            ./modules
             home-manager.nixosModules.home-manager
             { networking.hostName = hostname; }
           ];
