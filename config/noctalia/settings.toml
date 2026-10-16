@@ -7,6 +7,7 @@ capsule_fill = "surface"
 capsule_opacity = 0.43999999016523361
 capsule_radius = 8
 center = []
+enabled = false
 end = [ "media", "tray", "bluetooth", "network", "volume", "brightness", "battery", "control-center", "clock", "session" ]
 font_family = "JetBrainsMono NF"
 font_scale = 1.1999999806284904

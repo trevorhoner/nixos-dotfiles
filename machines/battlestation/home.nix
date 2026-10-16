@@ -18,6 +18,7 @@ in
       "rofi"      = { source = common "rofi"; };
       "oxwm"      = { source = common "oxwm"; };
       "mango"     = { source = common "mango";};
+      "waybar"    = { source = common "waybar";};
     };
 
     xdg.stateFile = {
