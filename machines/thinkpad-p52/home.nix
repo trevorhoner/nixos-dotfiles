@@ -14,11 +14,13 @@ in
     xdg.configFile = { 
       "alacritty" = { source = common "alacritty"; };
       "nvim"      = { source = common "nvim"; };
-      "qtile"     = { source = common "qtile"; };
       "rofi"      = { source = common "rofi"; };
       "oxwm"      = { source = common "oxwm"; };
       "mango"     = { source = common "mango";};
-      "wpg"       = { source = common "wpg"; };
+    };
+
+    xdg.stateFile = {
+      "noctalia/settings.toml".source     = common "noctalia/settings.toml";
     };
 
     xdg.dataFile = {
@@ -28,10 +30,6 @@ in
       "lutris/pga.db".source        = lutris  "pga.db";
       "lutris/banners".source       = lutris  "banners";
       "lutris/coverart".source      = lutris  "coverart";
-    };
-
-    xdg.stateFile = {
-      "noctalia/settings.toml".source     = common "noctalia/settings.toml";
     };
 
     programs.git= {
@@ -104,7 +102,6 @@ in
       restic
       udisks
       steam 
-      wpgtk
       gamescope
       discord
       nanosaur
