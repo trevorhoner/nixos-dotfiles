@@ -180,10 +180,10 @@ settings_window_translucent = true
     direction = "up"
 
 [theme]
-builtin = "Tokyo-Night"
+builtin = "Ayu"
 pure_black_dark = true
 source = "wallpaper"
-wallpaper_scheme = "m3-rainbow"
+wallpaper_scheme = "vibrant"
 
 [wallpaper]
 directory = "/home/trevor/.nixos-dotfiles/wallpaper"

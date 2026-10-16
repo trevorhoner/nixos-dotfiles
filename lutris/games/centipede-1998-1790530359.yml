@@ -26,7 +26,7 @@ slug: centipede-1998-setup
 system:
   env:
     LC_ALL: ''
-  gamescope: false
+  gamescope: true
   gamescope_force_grab_cursor: false
   gamescope_window_mode: -f
   resolution: 'off'

@@ -12,14 +12,6 @@
   boot.loader.grub.device = "nodev"; 
   boot.loader.grub.useOSProber = true;
 
-  #Networking-----------------------------------
-  networking.hostName = "battlestation"; 
-  networking.networkmanager.enable = true;
-  networking.wg-quick.interfaces.wg0 = {
-    autostart = false;
-    configFile = "/etc/wireguard/NixOS-FL.conf";
-  };
-
   #IWD configurations
   networking.networkmanager.wifi.backend = "iwd";
   networking.wireless.iwd.enable = true;
@@ -48,6 +40,15 @@
     fade = false;
     shadow = false;
   };
+
+  #Networking-----------------------------------
+  networking.hostName = "battlestation"; 
+  networking.networkmanager.enable = true;
+  networking.wg-quick.interfaces.wg0 = {
+    autostart = false;
+    configFile = "/etc/wireguard/NixOS-FL.conf";
+  };
+  
 #Users------------------------------------
 	home-manager = {
 	  useGlobalPkgs = true;
@@ -63,16 +64,10 @@
     "video"
     "audio"
     ]; 
-    packages = with pkgs; [
-      tree
-    ];
   };
 
   security.sudo.wheelNeedsPassword = false;
-
   security.rtkit.enable = true;
-
-
   programs.firefox.enable = true;
 
   programs.bash = {
@@ -87,6 +82,7 @@
   environment.systemPackages = with pkgs; [
     vim 
     wget
+    tree
     git
     alacritty
     picom
@@ -110,12 +106,6 @@
     gobject-introspection
     (python314.withPackages (ps: with ps; [
       openpyxl
-      pandas
-      numpy
-      pytest
-      pywal16
-      pillow
-      pygobject3
     ]))
     imagemagick
   ];
