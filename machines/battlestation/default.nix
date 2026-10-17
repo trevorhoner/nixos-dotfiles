@@ -4,15 +4,12 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      #../../modules/desktop-shells/noctalia.nix
+      ../../modules/desktop-shells/noctalia.nix
       ../../modules/greeters/noctalia-greeter.nix
       ../../modules/window-managers/mango.nix
       ../../modules/status-bars/waybar.nix
       #../../modules/misc/pvpn.nix
     ];
-
-  #programs.waybar.enable = true;
-  #programs.waybar.package = pkgs.waybar;
 
   #boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

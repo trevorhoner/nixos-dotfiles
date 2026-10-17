@@ -12,6 +12,11 @@
         inputs.nixpkgs.follows = "nixpkgs-unstable";
       };
 
+      waybar = {
+        url = "github:Alexays/Waybar";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
+      };
+
       noctalia = {
         url = "github:noctalia-dev/noctalia";
         inputs.nixpkgs.follows = "nixpkgs-unstable";
