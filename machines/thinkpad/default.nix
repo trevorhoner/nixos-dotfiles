@@ -17,7 +17,7 @@
   boot.loader.grub.useOSProber = true;
 
   #Networking-----------------------------------
-  networking.hostName = "thinkpad-p52"; 
+  networking.hostName = "thinkpad"; 
   networking.networkmanager.enable = true;
   networking.wg-quick.interfaces.wg0 = {
     autostart = false;
@@ -83,8 +83,8 @@
 	  enable = true;
 	  shellAliases = { 
 	    btw = "echo I use nixos, btw";
-      nrs = "sudo nixos-rebuild switch --flake ~/.nixos-dotfiles#thinkpad-p52"; 
-      nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#thinkpad-p52"; 
+      nrs = "sudo nixos-rebuild switch --flake ~/.nixos-dotfiles#thinkpad"; 
+      nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#thinkpad"; 
 	  };
   };
 

@@ -48,7 +48,7 @@
       {
 	      nixosConfigurations ={
           battlestation = mkMachine "battlestation";
-          thinkpad-p52        = mkMachine "thinkpad-p52";
+          thinkpad-p52        = mkMachine "thinkpad";
        };
       };
 }
