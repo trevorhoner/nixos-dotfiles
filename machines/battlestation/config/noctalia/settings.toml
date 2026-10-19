@@ -195,13 +195,13 @@ directory_dark = "/home/trevor/.nixos-dotfiles/wallpaper"
 directory_light = "/home/trevor/.nixos-dotfiles/wallpaper"
 
     [wallpaper.default]
-    path = "/home/trevor/.nixos-dotfiles/wallpaper/glacier_nationalpark.jpg"
+    path = "/home/trevor/.nixos-dotfiles/wallpaper/Tokyo-city.jpg"
 
     [wallpaper.last]
-    path = "/home/trevor/.nixos-dotfiles/wallpaper/glacier_nationalpark.jpg"
+    path = "/home/trevor/.nixos-dotfiles/wallpaper/Tokyo-city.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/trevor/.nixos-dotfiles/wallpaper/glacier_nationalpark.jpg"
+    path = "/home/trevor/.nixos-dotfiles/wallpaper/Tokyo-city.jpg"
 
 [widget.clock]
 format = "{:%l:%M %p}"

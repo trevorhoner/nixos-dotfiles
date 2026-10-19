@@ -67,6 +67,7 @@ in
 	    };
       initExtra = ''
         fastfetch
+        eval "$(fzf --bash)"
       '';
     };
 
@@ -84,6 +85,8 @@ in
         };
       };
     };
+
+    programs.pywal.enable = true;
     
     home.packages = with pkgs; [
     	neovim
@@ -93,6 +96,7 @@ in
     	nodejs
     	gcc
       rofi
+      pywal
       fastfetch
       freecad
       grim
