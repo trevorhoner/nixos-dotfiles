@@ -4,13 +4,14 @@
   "height": 32,
   "spacing": 0,
   "modules-left": [
-    "mango/workspaces",
-    "tray",
-    "custom/lock",
-    "custom/reboot",
-    "custom/power"
+   //"mango/workspaces",
+    "wlr/taskbar",
+    "tray"
+   //"custom/lock",
+   //"custom/reboot",
+   //"custom/power"
   ],
-  "modules-center": ["mango/window"],
+  //"modules-center": ["mango/window"],
   "modules-right": [
     "network",
     "battery",
@@ -23,25 +24,34 @@
     "custom/clock"
   ],
   "mango/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": true,
+   "disable-scroll": false,
+   "all-outputs": true,
+   "format": "{icon}",
+   "on-click": "activate",
+   "hide-empty": false,
+   "persistent-workspaces": {
+   "*":[1,2,3,4,5,6,7,8,9]
+   },
+   "format-icons": {
+     "1": "",
+     "2": "",
+     "3": "󰮂",
+     "4": "",
+     "5": "",
+     "6": "",
+     "7": "",
+     "8": "",
+     "9": "󰖳",
+     "default": ""
+   }
+  },
+  "wlr/taskbar": {
     "format": "{icon}",
+    "icon-size": 22,
+    "tooltip-format": "{title}",
     "on-click": "activate",
-    "persistent-workspaces": {
-    "*":[1,2,3,4,5,6,7,8,9]
-    },
-    "format-icons": {
-      "1": "󰣇",
-      "2": "󰈹",
-      "3": "󰇮",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "󰖳",
-      "default": ""
-    }
+    "on-click-right": "close",
+    "ignore-list": ["Rofi", "wofi"]
   },
   "custom/lock": {
   "format": "<span color='#00FFFF'>  </span>",

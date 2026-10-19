@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  waybarFromFlake = inputs.waybar.packages.${pkgs.system}.waybar;
+  waybarFromFlake = inputs.waybar.packages.${pkgs.stdenv.hostPlatform.system}.waybar;
 in
 {
   programs.waybar = {

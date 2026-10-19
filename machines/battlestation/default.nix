@@ -4,10 +4,10 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ../../modules/desktop-shells/noctalia.nix
-      ../../modules/greeters/noctalia-greeter.nix
-      ../../modules/window-managers/mango.nix
-      ../../modules/status-bars/waybar.nix
+      ./modules/noctalia.nix
+      ./modules/noctalia-greeter.nix
+      ./modules/mango.nix
+      ./modules/fzf.nix
       #../../modules/misc/pvpn.nix
     ];
 

@@ -2,25 +2,23 @@
 # Line 33 = package list
 let
   home         = config.home.homeDirectory;
-  common-dotfiles     = "${home}/.nixos-dotfiles/config";
-  dotfiles     = "${home}/.nixos-dotfiles/config"; #!! Run sudo chown "user" ~/nixos-dotfiles/config
+  dotfiles     = "${home}/.nixos-dotfiles/machines/thinkpad-p52/config"; #!! Run sudo chown "user" ~/nixos-dotfiles/config
   lutrisRepo   = "${home}/.nixos-dotfiles/lutris";
 
   link       = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
-  common       = path: config.lib.file.mkOutOfStoreSymlink "${common-dotfiles}/${path}";
   lutris     = path: config.lib.file.mkOutOfStoreSymlink "${lutrisRepo}/${path}";
 in
 {
     xdg.configFile = { 
-      "alacritty" = { source = common "alacritty"; };
-      "nvim"      = { source = common "nvim"; };
-      "rofi"      = { source = common "rofi"; };
-      "oxwm"      = { source = common "oxwm"; };
-      "mango"     = { source = common "mango";};
+      "alacritty" = { source = link "alacritty"; };
+      "nvim"      = { source = link "nvim"; };
+      "rofi"      = { source = link "rofi"; };
+      "oxwm"      = { source = link "oxwm"; };
+      "mango"     = { source = link "mango";};
     };
 
     xdg.stateFile = {
-      "noctalia/settings.toml".source     = common "noctalia/settings.toml";
+      "noctalia/settings.toml".source     = link "noctalia/settings.toml";
     };
 
     xdg.dataFile = {

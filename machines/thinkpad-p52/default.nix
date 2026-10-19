@@ -4,9 +4,10 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ../../modules/desktop-shells/noctalia.nix
-      ../../modules/window-managers/mango.nix
-      ../../modules/greeters/noctalia-greeter.nix
+      ./modules/noctalia.nix
+      ./modules/mango.nix
+      ./modules/noctalia-greeter.nix
+      ./modules/fzf.nix
     ];
 
   #boot.loader.systemd-boot.enable = true;
