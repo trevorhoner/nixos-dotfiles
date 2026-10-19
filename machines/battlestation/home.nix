@@ -17,6 +17,7 @@ in
       "oxwm"      = { source = link "oxwm"; };
       "mango"     = { source = link "mango";};
       "waybar"    = { source = link "waybar";};
+      "fastfetch" = { source = link "fastfetch";};
     };
 
     xdg.stateFile = {
@@ -64,6 +65,9 @@ in
         nrs = "sudo nixos-rebuild switch --flake ~/.nixos-dotfiles#battlestation"; 
         nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#battlestation"; 
 	    };
+      initExtra = ''
+        fastfetch
+      '';
     };
 
     qt = {

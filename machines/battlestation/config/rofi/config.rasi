@@ -27,7 +27,7 @@ window {
   background-color: rgba(24, 24, 24, 0.9);
   border: 2px;
   border-color: @border;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 mainbox {
@@ -93,7 +93,7 @@ element.alternate.normal {
 
 element-icon {
     background-color: transparent;
-    size: 64px;
+    size: 3em;
     vertical-align: 0.5;
     horizontal-align: 0.5;
 }
