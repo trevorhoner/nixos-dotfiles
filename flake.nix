@@ -31,6 +31,12 @@
 	      url = "github:nix-community/home-manager/release-26.05";
 	      inputs.nixpkgs.follows = "nixpkgs";
 	    };
+
+      hjem = {
+        url = "github:feel-co/hjem";
+        inputs.nixpkgs.follows = "nixpkgs-unstable";
+      };
+
     };
   
     outputs = inputs@{ self, nixpkgs, home-manager, ... }:
@@ -41,6 +47,7 @@
           modules = [
             ./machines/${hostname}
             home-manager.nixosModules.home-manager
+            inputs.hjem.nixosModules.default
             { networking.hostName = hostname; }
           ];
         };

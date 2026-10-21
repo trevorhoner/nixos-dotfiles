@@ -1,6 +1,7 @@
 game:
-  exe: /home/trevor/Games/Lutris/star-wars-episode-i-racer/drive_c/Program Files/LucasArts/RACER/RACER.EXE
+  exe: /home/trevor/Games/Windows/star-wars-episode-i-racer/Racer.exe
   prefix: /home/trevor/Games/Lutris/star-wars-episode-i-racer
+  working_dir: /home/trevor/Games/Windows/star-wars-episode-i-racer
 game_slug: star-wars-episode-i-racer
 name: Star Wars Episode I - Racer
 script:
@@ -25,4 +26,5 @@ system:
   env:
     LC_ALL: ''
   gamescope: true
+  gamescope_window_mode: ''
 version: Setup file
