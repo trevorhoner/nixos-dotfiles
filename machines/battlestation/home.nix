@@ -33,6 +33,23 @@ in
       "lutris/coverart".source      = lutris  "coverart";
     };
 
+    #gtk = {
+    #  enable = true;
+
+    #  theme = {
+    #    name = "Materia-dark";
+    #    package = pkgs.materia-theme;
+    #  };
+
+    #  iconTheme = {
+    #    name = "Papirus-Dark";
+    #    package = pkgs.papirus-icon-theme;
+    #  };
+
+    #  #gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    #  #gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
+    #};
+
     programs.git= {
       enable = true;
       settings = {
@@ -41,6 +58,9 @@ in
         init.defaultBranch = "main";
         url."git@github.com:".insteadOf = "https://github.com";
       };
+
+      lfs.enable = true;
+
     };
 
     programs.ssh = {
@@ -97,6 +117,7 @@ in
     	gcc
       rofi
       pywal
+      gimp
       fastfetch
       freecad
       grim
@@ -107,6 +128,8 @@ in
       papirus-icon-theme
       iwd
       thunar
+      gvfs
+      gtk4
       proton-vpn
       proton-vpn-cli
       wineWow64Packages.stableFull

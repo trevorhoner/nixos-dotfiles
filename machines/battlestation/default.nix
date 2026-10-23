@@ -8,6 +8,7 @@
       ./modules/noctalia-greeter.nix
       ./modules/mango.nix
       ./modules/fzf.nix
+      ./modules/hjem.nix
       #../../modules/misc/pvpn.nix
     ];
 
