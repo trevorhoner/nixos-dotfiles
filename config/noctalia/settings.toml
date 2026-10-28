@@ -7,7 +7,20 @@ capsule_fill = "surface"
 capsule_opacity = 0.43999999016523361
 capsule_radius = 8
 center = []
-end = [ "media", "tray", "bluetooth", "network", "volume", "brightness", "battery", "control-center", "clock", "session" ]
+end = [
+    "media",
+    "tray",
+    "bluetooth",
+    "network",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "cpu",
+    "ram",
+    "clock",
+    "session"
+]
 font_family = "JetBrainsMono NF"
 font_scale = 1.1999999806284904
 font_weight = 700
@@ -186,7 +199,6 @@ settings_window_translucent = true
 [theme]
 builtin = "Ayu"
 pure_black_dark = true
-source = "wallpaper"
 wallpaper_scheme = "vibrant"
 
 [wallpaper]
@@ -195,13 +207,13 @@ directory_dark = "/home/trevor/.nixos-dotfiles/wallpaper"
 directory_light = "/home/trevor/.nixos-dotfiles/wallpaper"
 
     [wallpaper.default]
-    path = "/home/trevor/.nixos-dotfiles/wallpaper/glacier_nationalpark.jpg"
+    path = "/home/trevor/.nixos-dotfiles/wallpaper/Tokyo-city.jpg"
 
     [wallpaper.last]
-    path = "/home/trevor/.nixos-dotfiles/wallpaper/glacier_nationalpark.jpg"
+    path = "/home/trevor/.nixos-dotfiles/wallpaper/Tokyo-city.jpg"
 
     [wallpaper.monitors.DP-3]
-    path = "/home/trevor/.nixos-dotfiles/wallpaper/glacier_nationalpark.jpg"
+    path = "/home/trevor/.nixos-dotfiles/wallpaper/Tokyo-city.jpg"
 
 [widget.clock]
 format = "{:%l:%M %p}"
@@ -218,6 +230,9 @@ enabled = false
 
 [widget.network]
 show_label = false
+
+[widget.session]
+enabled = false
 
 [widget.volume]
 show_label = false

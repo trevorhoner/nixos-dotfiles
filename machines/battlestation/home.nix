@@ -3,7 +3,7 @@
 let
 
   home                = config.home.homeDirectory;
-  dotfiles            = "${home}/.nixos-dotfiles/machines/battlestation/config";
+  dotfiles            = "${home}/.nixos-dotfiles/config";
   lutrisRepo          = "${home}/.nixos-dotfiles/lutris";
 
   link       = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
