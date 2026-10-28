@@ -120,6 +120,8 @@ in
       gimp
       fastfetch
       freecad
+      btop
+      ncdu
       grim
       slurp
       transmission_4-qt
