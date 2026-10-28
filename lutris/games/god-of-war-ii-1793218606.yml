@@ -1,0 +1,5 @@
+game:
+  main_file: /home/trevor/Games/ROMs/PS2/God of War II (USA).iso
+system:
+  gamescope: true
+  gamescope_window_mode: -f

@@ -120,6 +120,7 @@ in
       gimp
       fastfetch
       freecad
+      pcsx2
       btop
       ncdu
       grim
