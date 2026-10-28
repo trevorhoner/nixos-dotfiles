@@ -2,7 +2,7 @@
 # Line 33 = package list
 let
   home         = config.home.homeDirectory;
-  dotfiles     = "${home}/.nixos-dotfiles/machines/thinkpad/config"; #!! Run sudo chown "user" ~/nixos-dotfiles/config
+  dotfiles     = "${home}/.nixos-dotfiles/config"; #!! Run sudo chown "user" ~/nixos-dotfiles/config
   lutrisRepo   = "${home}/.nixos-dotfiles/lutris";
 
   link       = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";

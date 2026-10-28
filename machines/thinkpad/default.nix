@@ -4,10 +4,10 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ./modules/noctalia.nix
-      ./modules/mango.nix
-      ./modules/noctalia-greeter.nix
-      ./modules/fzf.nix
+      ../../modules/battlestation/noctalia.nix
+      ../../modules/battlestation/mango.nix
+      ../../modules/battlestation/noctalia-greeter.nix
+      ../../modules/battlestation/fzf.nix
     ];
 
   #boot.loader.systemd-boot.enable = true;
