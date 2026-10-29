@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 # Line 33 = package list
+
 let
 
   home                = config.home.homeDirectory;
@@ -10,6 +11,11 @@ let
   lutris     = path: config.lib.file.mkOutOfStoreSymlink "${lutrisRepo}/${path}";
 in
 {
+
+  import = [
+    ../../modules/battlestation/user-packages.nix
+  ];
+
     xdg.configFile = { 
       "alacritty" = { source = link "alacritty"; };
       "nvim"      = { source = link "nvim"; };
@@ -32,23 +38,6 @@ in
       "lutris/banners".source       = lutris  "banners";
       "lutris/coverart".source      = lutris  "coverart";
     };
-
-    #gtk = {
-    #  enable = true;
-
-    #  theme = {
-    #    name = "Materia-dark";
-    #    package = pkgs.materia-theme;
-    #  };
-
-    #  iconTheme = {
-    #    name = "Papirus-Dark";
-    #    package = pkgs.papirus-icon-theme;
-    #  };
-
-    #  #gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
-    #  #gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
-    #};
 
     programs.git= {
       enable = true;
@@ -108,48 +97,4 @@ in
 
     programs.pywal.enable = true;
     
-    home.packages = with pkgs; [
-    	neovim
-    	ripgrep
-    	nil
-    	nixpkgs-fmt
-    	nodejs
-    	gcc
-      rofi
-      pywal
-      gimp
-      fastfetch
-      freecad
-      pcsx2
-      btop
-      ncdu
-      grim
-      slurp
-      transmission_4-qt
-      qt6Packages.qt6ct
-      libsForQt5.qt5ct
-      papirus-icon-theme
-      iwd
-      thunar
-      gvfs
-      gtk4
-      proton-vpn
-      proton-vpn-cli
-      wineWow64Packages.stableFull
-      winetricks
-      mono
-      onlyoffice-desktopeditors
-      grub2
-      os-prober
-      unzip
-      _7zz
-      restic
-      udisks
-      steam 
-      wpgtk
-      gamescope
-      discord
-      nanosaur
-      nanosaur2
-    ];
 }

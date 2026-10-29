@@ -8,6 +8,7 @@
       ../../modules/battlestation/mango.nix
       ../../modules/battlestation/noctalia-greeter.nix
       ../../modules/battlestation/fzf.nix
+      ../../modules/battlestation/system-packages.nix
     ];
 
   #boot.loader.systemd-boot.enable = true;
@@ -88,41 +89,6 @@
 	  };
   };
 
-  environment.systemPackages = with pkgs; [
-    vim 
-    wget
-    git
-    alacritty
-    picom
-    htop
-    lutris
-    wireguard-tools
-    wireguard-ui
-    xclip
-    maim
-    bluez
-    fuseiso
-    gtk-engine-murrine
-    xscreensaver
-    brave
-    usbutils
-    udisks
-    unrar
-    v4l-utils
-    ffmpeg
-    feh
-    gobject-introspection
-    (python314.withPackages (ps: with ps; [
-      openpyxl
-      pandas
-      numpy
-      pytest
-      pywal16
-      pillow
-      pygobject3
-    ]))
-    imagemagick
-  ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono

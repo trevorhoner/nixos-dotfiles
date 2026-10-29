@@ -9,6 +9,7 @@
       ../../modules/battlestation/mango.nix
       ../../modules/battlestation/fzf.nix
       ../../modules/battlestation/hjem.nix
+      ../../modules/battlestation/system-packages.nix
       #../../modules/misc/pvpn.nix
     ];
 
@@ -84,37 +85,6 @@
       nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#battlestation"; 
 	  };
   };
-
-  environment.systemPackages = with pkgs; [
-    vim 
-    wget
-    tree
-    git
-    alacritty
-    picom
-    htop
-    lutris
-    wireguard-tools
-    wireguard-ui
-    xclip
-    maim
-    bluez
-    fuseiso
-    gtk-engine-murrine
-    xscreensaver
-    brave
-    usbutils
-    udisks
-    unrar
-    v4l-utils
-    ffmpeg
-    feh
-    gobject-introspection
-    (python314.withPackages (ps: with ps; [
-      openpyxl
-    ]))
-    imagemagick
-  ];
 
   fonts.packages = with pkgs; [
 #     nerd-fonts.caskaydia-cove
