@@ -76,15 +76,6 @@
 
   programs.firefox.enable = true;
   
-  programs.bash = {
-	  enable = true;
-	  shellAliases = { 
-	    btw = "echo I use nixos, btw";
-      nrs = "sudo nixos-rebuild switch --flake ~/.nixos-dotfiles#thinkpad"; 
-      nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#thinkpad"; 
-	  };
-  };
-
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
