@@ -8,7 +8,7 @@ x = 6
 [general]
 live_config_reload = true
 import = [
-    "~/.nixos-dotfiles/machines/battlestation/config/alacritty/themes/tokyo_night.toml"
+    "~/.nixos-dotfiles/config/alacritty/themes/tokyo-night-enhanced.toml"
 ]
 
 [font]
