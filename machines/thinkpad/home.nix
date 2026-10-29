@@ -19,6 +19,7 @@ in
       "rofi"      = { source = link "rofi"; };
       "oxwm"      = { source = link "oxwm"; };
       "mango"     = { source = link "mango";};
+      "fastfetch" = { source = link "fastfetch";};
     };
 
     xdg.stateFile = {
