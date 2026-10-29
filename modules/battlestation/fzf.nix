@@ -13,7 +13,7 @@
 
   programs.bash = {
     enable = true;
-    shellInit = ''
+    interactiveShellInit = ''
       eval "$(fzf --bash)"
     '';
   };

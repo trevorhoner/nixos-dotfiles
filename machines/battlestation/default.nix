@@ -76,15 +76,6 @@
   security.rtkit.enable = true;
   programs.firefox.enable = true;
 
-  programs.bash = {
-	  enable = true;
-	  shellAliases = { 
-	    btw = "echo I use nixos, btw";
-      nrs = "sudo nixos-rebuild switch --flake ~/.nixos-dotfiles#battlestation"; 
-      nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#battlestation"; 
-	  };
-  };
-
   fonts.packages = with pkgs; [
 #     nerd-fonts.caskaydia-cove
      nerd-fonts.jetbrains-mono

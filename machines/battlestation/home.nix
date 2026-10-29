@@ -66,8 +66,6 @@ in
         '';
     };
 
-    home.stateVersion = "26.05";
-
     programs.bash = {
 	    enable = true;
 	    shellAliases = { 
@@ -78,7 +76,9 @@ in
       initExtra = ''
         fastfetch
       '';
-    };
+      };
+
+    home.stateVersion = "26.05";
 
     qt = {
       enable = true;
