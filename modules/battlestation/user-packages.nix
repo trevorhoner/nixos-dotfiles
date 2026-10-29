@@ -15,7 +15,6 @@
     freecad
     pcsx2
     btop
-    ncdu
     grim
     slurp
     transmission_4-qt

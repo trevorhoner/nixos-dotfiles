@@ -6,6 +6,8 @@
     vim 
     wget
     tree
+    godu
+    ncdu
     git
     alacritty
     picom
