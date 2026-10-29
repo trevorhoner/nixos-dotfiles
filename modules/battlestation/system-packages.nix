@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     vim 
     wget
+    tree
     git
     alacritty
     picom

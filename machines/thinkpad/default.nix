@@ -68,9 +68,6 @@
     "video"
     "audio"
     ]; 
-    packages = with pkgs; [
-      tree
-    ];
   };
 
   security.sudo.wheelNeedsPassword = false;

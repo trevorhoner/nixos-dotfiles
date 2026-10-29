@@ -44,6 +44,19 @@ in
       };
     };
 
+  programs.bash = {
+	  enable = true;
+	  shellAliases = { 
+	    btw = "echo I use nixos, btw";
+      nrs = "sudo nixos-rebuild switch --flake ~/.nixos-dotfiles#thinkpad"; 
+      nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#thinkpad"; 
+	  };
+    initExtra = ''
+      fastfetch
+      eval "$(fzf --bash)"
+    '';
+  };
+
     programs.ssh= {
       enable = true;
       enableDefaultConfig = false;
