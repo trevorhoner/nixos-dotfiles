@@ -77,7 +77,6 @@
 
   security.rtkit.enable = true;
 
-
   programs.firefox.enable = true;
   
   programs.bash = {
@@ -88,7 +87,6 @@
       nrs-dry = "sudo nixos-rebuild test --flake ~/.nixos-dotfiles#thinkpad"; 
 	  };
   };
-
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono

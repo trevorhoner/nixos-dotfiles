@@ -12,7 +12,7 @@ let
 in
 {
 
-  import = [
+  imports = [
     ../../modules/battlestation/user-packages.nix
   ];
 

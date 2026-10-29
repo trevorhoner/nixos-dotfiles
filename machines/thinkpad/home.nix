@@ -9,6 +9,10 @@ let
   lutris     = path: config.lib.file.mkOutOfStoreSymlink "${lutrisRepo}/${path}";
 in
 {
+    imports = [
+      ../modules/battlestation/user-packages.nix
+    ];
+
     xdg.configFile = { 
       "alacritty" = { source = link "alacritty"; };
       "nvim"      = { source = link "nvim"; };
@@ -70,39 +74,5 @@ in
         };
       };
     };
-    
-    home.packages = with pkgs; [
-    	neovim
-    	ripgrep
-    	nil
-    	nixpkgs-fmt
-    	nodejs
-    	gcc
-      rofi
-      fastfetch
-      freecad
-      grim
-      slurp
-      transmission_4-qt
-      qt6Packages.qt6ct
-      libsForQt5.qt5ct
-      papirus-icon-theme
-      iwd
-      thunar
-      wineWow64Packages.stableFull
-      winetricks
-      mono
-      onlyoffice-desktopeditors
-      grub2
-      os-prober
-      unzip
-      _7zz
-      restic
-      udisks
-      steam 
-      gamescope
-      discord
-      nanosaur
-      nanosaur2
-    ];
+
 }
