@@ -197,9 +197,11 @@ settings_window_translucent = true
     direction = "up"
 
 [theme]
-builtin = "Ayu"
+builtin = "Gruvbox"
+community_palette = "Ayu Green"
 pure_black_dark = true
-wallpaper_scheme = "vibrant"
+source = "community"
+wallpaper_scheme = "dysfunctional"
 
 [wallpaper]
 directory = "/home/trevor/.nixos-dotfiles/wallpaper"
