@@ -10,7 +10,6 @@
       ../../modules/battlestation/fzf.nix
       ../../modules/battlestation/hjem.nix
       ../../modules/battlestation/system-packages.nix
-      #../../modules/misc/pvpn.nix
     ];
 
   #boot.loader.systemd-boot.enable = true;

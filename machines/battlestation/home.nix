@@ -77,7 +77,6 @@ in
 	    };
       initExtra = ''
         fastfetch
-        eval "$(fzf --bash)"
       '';
     };
 

@@ -10,4 +10,11 @@
     fzy
     ytfzf
   ];
+
+  programs.bash = {
+    enable = true;
+    shellInit = ''
+      eval "$(fzf --bash)"
+    '';
+  };
 }
