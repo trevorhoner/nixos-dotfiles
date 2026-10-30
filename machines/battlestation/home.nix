@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-# Line 33 = package list
 
 let
 
