@@ -6,6 +6,7 @@
     vim 
     wget
     tree
+    linuxPackages.xpadneo
     godu
     ncdu
     git
