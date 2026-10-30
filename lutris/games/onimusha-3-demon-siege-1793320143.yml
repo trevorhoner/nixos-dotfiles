@@ -1,0 +1,7 @@
+game:
+  main_file: /home/trevor/Games/ROMs/PS2/Onimusha 3 - Demon Siege (USA).iso
+pcsx2:
+  nogui: false
+system:
+  gamescope: true
+  gamescope_window_mode: -f
