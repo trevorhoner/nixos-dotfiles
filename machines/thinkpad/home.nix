@@ -10,7 +10,7 @@ let
 in
 {
     imports = [
-      ../../modules/battlestation/user-packages.nix
+      ../../modules/user-packages.nix
     ];
 
     xdg.configFile = { 
