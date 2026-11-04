@@ -36,7 +36,7 @@
   boot.kernelPatches = [
     {
       name = "Rust Support";
-      path = null;
+      patch = null;
       features = {
         rust = true;
       };
