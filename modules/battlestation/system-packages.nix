@@ -4,13 +4,31 @@
 
   hardware.xpadneo.enable = true;
 
+  programs = {
+    thunar = {
+      enable = true;
+    };
+
+    xfconf.enable = true;
+    dconf.enable = true;
+
+  };
+
+  services = {
+    gvfs.enable = true;
+    tumbler.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     vim 
     wget
     tree
     linuxPackages.xpadneo
     godu
+    thunar-archive-plugin
+    thunar-volman
     ncdu
+    xdg-utils
     git
     alacritty
     picom

@@ -44,6 +44,8 @@
     }
   ];
 
+  boot.kernelPackages = pkgs.linuxKernel.packages_latest;
+
   #Services-----------------------------
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;

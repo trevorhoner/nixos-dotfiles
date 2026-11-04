@@ -1,18 +1,28 @@
 { pkgs, ... }:
 {
+
   gtk = {
     enable = true;
 
     #GTK Application theme
     theme = {
-      name = "Nightfox-Dark";
-      package = pkgs.nightfox-gtk-theme;
+      #name = "Nightfox-Dark";
+      #package = pkgs.nightfox-gtk-theme;
+      name = "Tokyonight-Dark";
+      package = pkgs.tokyonight-gtk-theme;
     };
 
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "Faba-Dark";
+      package = pkgs.faba-icon-theme;
     };
+
+    cursorTheme = {
+      package = pkgs.nordzy-cursor-theme;
+      name = "Nordzy-cursors";
+      size = 24;
+    };
+
   };
 
   home.packages = with pkgs; [
