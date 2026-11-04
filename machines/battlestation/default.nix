@@ -8,7 +8,7 @@
       ../../modules/noctalia-greeter.nix
       ../../modules/mango.nix
       ../../modules/fzf.nix
-      ../../modules/hjem.nix
+      #../../modules/hjem.nix
       ../../modules/system-packages.nix
       ../../modules/system-settings.nix
     ];
