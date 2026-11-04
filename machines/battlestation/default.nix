@@ -32,6 +32,7 @@
     enable = true;
     allowReboot = false;
   };
+
   #Rust Support-------------------------
   boot.kernelPatches = [
     {

@@ -1,5 +1,19 @@
 { pkgs, ... }:
 {
+  gtk = {
+    enable = true;
+
+    #GTK Application theme
+    theme = {
+      name = "Nightfox-Dark";
+      package = pkgs.nightfox-gtk-theme;
+    };
+
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
 
   home.packages = with pkgs; [
   	neovim
