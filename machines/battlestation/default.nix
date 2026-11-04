@@ -44,7 +44,7 @@
     }
   ];
 
-  boot.kernelPackages = pkgs.linuxKernel.packages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #Services-----------------------------
   hardware.bluetooth.enable = true;
