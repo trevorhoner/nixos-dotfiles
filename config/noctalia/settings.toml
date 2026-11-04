@@ -260,6 +260,7 @@ enabled = false
 
 [widget.network]
 show_label = false
+vpn_status = "hidden"
 
 [widget.session]
 enabled = false
