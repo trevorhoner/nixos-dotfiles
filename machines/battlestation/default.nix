@@ -32,6 +32,16 @@
     enable = true;
     allowReboot = false;
   };
+  #Rust Support-------------------------
+  boot.kernelPatches = [
+    {
+      name = "Rust Support";
+      path = null;
+      features = {
+        rust = true;
+      };
+    }
+  ];
 
   #Services-----------------------------
   hardware.bluetooth.enable = true;
