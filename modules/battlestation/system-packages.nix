@@ -2,6 +2,8 @@
 
 {
 
+  hardware.xpadneo.enable = true;
+
   environment.systemPackages = with pkgs; [
     vim 
     wget

@@ -98,5 +98,5 @@ wine:
     D3DImm: n,b
     DDraw: n,b
     dsound: n,b
-  version: ge-proton
+  version: system
 year: 2001

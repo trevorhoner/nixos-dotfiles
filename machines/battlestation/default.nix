@@ -12,6 +12,8 @@
       ../../modules/battlestation/system-packages.nix
     ];
 
+  hardware.xpadneo.enable = true;
+
   #boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub.efiSupport = true;
@@ -24,6 +26,12 @@
   networking.wireless.enable = false;
 
   time.timeZone = "America/New_York";
+
+  #Upgrades-----------------------------
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+  };
 
   #Services-----------------------------
   hardware.bluetooth.enable = true;
