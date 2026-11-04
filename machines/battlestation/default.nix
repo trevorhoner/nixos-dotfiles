@@ -4,13 +4,13 @@
   imports =
     [ 
       ./hardware-configuration.nix
-      ../../modules/battlestation/noctalia.nix
-      ../../modules/battlestation/noctalia-greeter.nix
-      ../../modules/battlestation/mango.nix
-      ../../modules/battlestation/fzf.nix
-      ../../modules/battlestation/hjem.nix
-      ../../modules/battlestation/system-packages.nix
-      ../../modules/battlestation/system-settings.nix
+      ../../modules/noctalia.nix
+      ../../modules/noctalia-greeter.nix
+      ../../modules/mango.nix
+      ../../modules/fzf.nix
+      ../../modules/hjem.nix
+      ../../modules/system-packages.nix
+      ../../modules/system-settings.nix
     ];
 
   #Networking-----------------------------------
