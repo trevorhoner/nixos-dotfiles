@@ -32,10 +32,10 @@
 	      inputs.nixpkgs.follows = "nixpkgs";
 	    };
 
-      hjem = {
-        url = "github:feel-co/hjem";
-        inputs.nixpkgs.follows = "nixpkgs-unstable";
-      };
+      #hjem = {
+      #  url = "github:feel-co/hjem";
+      #  inputs.nixpkgs.follows = "nixpkgs-unstable";
+      #};
 
     };
   
@@ -47,7 +47,7 @@
           modules = [
             ./machines/${hostname}
             home-manager.nixosModules.home-manager
-            inputs.hjem.nixosModules.default
+            #inputs.hjem.nixosModules.default
             { networking.hostName = hostname; }
           ];
         };
