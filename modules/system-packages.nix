@@ -19,6 +19,8 @@
     tumbler.enable = true;
   };
 
+  programs.amnezia-vpn.enable = true;
+
   environment.systemPackages = with pkgs; [
     amnezia-vpn
     vim 
