@@ -20,6 +20,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    amnezia-vpn
     vim 
     wget
     tree
