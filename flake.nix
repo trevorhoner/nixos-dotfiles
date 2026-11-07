@@ -32,6 +32,11 @@
 	      inputs.nixpkgs.follows = "nixpkgs";
 	    };
 
+      comin = {
+        url = "github:nlewo/comin";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
       #hjem = {
       #  url = "github:feel-co/hjem";
       #  inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -39,7 +44,7 @@
 
     };
   
-    outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+    outputs = inputs@{ self, nixpkgs, home-manager, comin, ... }:
       let
         mkMachine = hostname: nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -47,6 +52,17 @@
           modules = [
             ./machines/${hostname}
             home-manager.nixosModules.home-manager
+            comin.nixosModules.comin
+            ({
+              services.comin = {
+                enable = true;
+                remotes = [{
+                  name = "origin";
+                  url = "https://github.com/trevorhoner/nixos-dotfiles.git";
+                  branches.main.name = "main";
+                }];
+              };
+            })
             #inputs.hjem.nixosModules.default
             { networking.hostName = hostname; }
           ];
