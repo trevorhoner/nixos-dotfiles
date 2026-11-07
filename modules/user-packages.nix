@@ -26,6 +26,7 @@
   };
 
   home.packages = with pkgs; [
+    foliate
   	neovim
   	ripgrep
   	nil
