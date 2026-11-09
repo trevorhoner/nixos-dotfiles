@@ -14,6 +14,7 @@ in
 
     xdg.configFile = { 
       "alacritty" = { source = link "alacritty"; };
+      "lsd"       = { source = link "lsd"; };
       "nvim"      = { source = link "nvim"; };
       "rofi"      = { source = link "rofi"; };
       "oxwm"      = { source = link "oxwm"; };
