@@ -54,4 +54,13 @@ in
     };
 
     programs.pywal.enable = true;
+
+    programs.bash = {
+      shellAliases = {
+         l = "lsd -l";
+         la = "lsd -a";
+         lla = "lsd -la";
+         lt = "lsd --tree";
+      };
+    };
 }
