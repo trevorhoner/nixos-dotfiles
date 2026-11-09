@@ -22,6 +22,7 @@
   programs.amnezia-vpn.enable = true;
 
   environment.systemPackages = with pkgs; [
+    gnome-calculator
     amnezia-vpn
     vim 
     wget
