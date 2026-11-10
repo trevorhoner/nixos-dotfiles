@@ -1,0 +1,32 @@
+game:
+  exe: /home/trevor/Games/Lutris/dynasty-warriors-4/drive_c/Program Files (x86)/Koei/Dynasty
+    Warriors 4 Hyper/Launcher.exe
+  prefix: /home/trevor/Games/Lutris/dynasty-warriors-4
+game_slug: dynasty-warriors-4
+name: Dynasty Warriors 4
+script:
+  files:
+  - setupfile: N/A:Select the setup file
+  game:
+    exe: _xXx_AUTO_WIN32_xXx_
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      env:
+        LC_ALL: ''
+      executable: /home/trevor/Games/Windows/Dynasty Warrirors 4 Hyper/setup.exe
+      prefix: /home/trevor/Games/Lutris/dynasty-warriors-4
+      wine_path: /etc/profiles/per-user/trevor/bin/wine
+  system:
+    env:
+      LC_ALL: ''
+slug: dynasty-warriors-4-setup
+system:
+  env:
+    LC_ALL: ''
+  gamescope: false
+  gamescope_game_res: 1440x1080
+version: Setup file
+wine:
+  version: system

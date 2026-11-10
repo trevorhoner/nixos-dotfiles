@@ -25,8 +25,7 @@ system:
   display: primary
   env:
     LC_ALL: ''
-  gamescope: false
-  gamescope_game_res: 640x400
+  gamescope: true
   gamescope_window_mode: -f
   resolution: 640x480
   sdl_video_fullscreen: '0'
@@ -36,5 +35,5 @@ wine:
   Dpi: false
   d3d_extras: false
   dxvk: false
-  version: wine-ge-8-26-x86_64
+  version: system
   vkd3d: false
