@@ -61,6 +61,7 @@ in
          la = "lsd -a";
          lla = "lsd -la";
          lt = "lsd --tree";
+         use-flake = "echo 'use flake' > .envrc && direnv allow";
       };
     };
 
