@@ -1,5 +1,6 @@
 game:
-  exe: ''
+  exe: /home/trevor/Games/Lutris/aliens-vs-predator-2-2001/drive_c/Program Files (x86)/Fox/Aliens
+    vs. Predator 2/AVP2.exe
   prefix: /home/trevor/Games/Lutris/aliens-vs-predator-2-2001
 game_slug: aliens-vs-predator-2-2001
 name: Aliens vs. Predator 2 (2001)
@@ -24,4 +25,9 @@ slug: aliens-vs-predator-2-2001-setup
 system:
   env:
     LC_ALL: ''
+  gamescope: false
 version: Setup file
+wine:
+  overrides:
+    winmm: n,b
+  version: system
