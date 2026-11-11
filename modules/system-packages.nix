@@ -22,6 +22,7 @@
   programs.amnezia-vpn.enable = true;
 
   environment.systemPackages = with pkgs; [
+    rustup
     lsd
     gnome-calculator
     amnezia-vpn
