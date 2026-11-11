@@ -22,6 +22,8 @@
   programs.amnezia-vpn.enable = true;
 
   environment.systemPackages = with pkgs; [
+    rust-analyzer
+    gcc
     rustup
     lsd
     gnome-calculator
