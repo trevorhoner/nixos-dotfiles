@@ -1,7 +1,7 @@
 game:
   arch: auto
   exe: /home/trevor/Games/Lutris/centipede-1998/drive_c/Program Files (x86)/Hasbro
-    Interactive/Centipede/chgres.exe
+    Interactive/Centipede/centi.exe
   prefix: /home/trevor/Games/Lutris/centipede-1998
 game_slug: centipede-1998
 name: Centipede (1998)
@@ -25,7 +25,9 @@ script:
 slug: centipede-1998-setup
 system:
   env:
+    GDK_BACKEND: x11
     LC_ALL: ''
+    WINE_WMCLASS: lutris-wine
   gamescope: true
   gamescope_force_grab_cursor: false
   gamescope_window_mode: -f
@@ -36,6 +38,10 @@ wine:
   MouseWarpOverride: enable
   WineDesktop: 800x600
   dxvk: false
+  overrides:
+    d3d8: n,b
+    d3d9: n,b
+    d3dimm: n,b
   system_winetricks: false
-  version: system
+  version: wine-ge-8-26-x86_64
   vkd3d: false
