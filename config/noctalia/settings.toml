@@ -227,11 +227,13 @@ widget_order = [
 time_format = "{:%l:%M %p}"
 
 [plugin_settings."yuuto/calculator"]
+angle_unit = "deg"
 panel_layer = "overlay"
 panel_placement = "floating"
+panel_position = "center"
 
 [plugins]
-enabled = []
+enabled = [ "yuuto/calculator" ]
 
 [shell]
 font_family = "DejaVu Sans"

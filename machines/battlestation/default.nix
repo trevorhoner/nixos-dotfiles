@@ -11,6 +11,7 @@
       #../../modules/hjem.nix
       ../../modules/system-packages.nix
       ../../modules/system-settings.nix
+      ../../modules/pvpn.nix
     ];
 
   #Networking-----------------------------------

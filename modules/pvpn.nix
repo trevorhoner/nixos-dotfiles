@@ -11,4 +11,18 @@
       "trevor"
     ];
   };
+
+  systemd.tmpfiles.settings."pvpn" = {
+    "/etc/pvpn".d = {
+      mode = "0750";
+      user = "root";
+      group = "pvpn";
+    };
+
+    "/var/lib/pvpn".d = {
+      mode = "0700";
+      user = "root";
+      group = "root";
+    };
+  };
 }
