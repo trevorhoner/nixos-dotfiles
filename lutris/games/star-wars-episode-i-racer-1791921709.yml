@@ -1,5 +1,5 @@
 game:
-  exe: /home/trevor/Games/Windows/star-wars-episode-i-racer/Racer.exe
+  exe: /home/trevor/Games/Lutris/star-wars-episode-i-racer/drive_c/Program Files/LucasArts/RACER/RACER.EXE
   prefix: /home/trevor/Games/Lutris/star-wars-episode-i-racer
   working_dir: /home/trevor/Games/Windows/star-wars-episode-i-racer
 game_slug: star-wars-episode-i-racer
@@ -25,6 +25,10 @@ slug: star-wars-episode-i-racer-setup
 system:
   env:
     LC_ALL: ''
-  gamescope: true
+  gamescope: false
   gamescope_window_mode: ''
 version: Setup file
+wine:
+  overrides:
+    d3dimm: n,b
+    ddraw: n,b
