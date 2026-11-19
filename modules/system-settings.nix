@@ -1,18 +1,38 @@
 { lib, pkgs, ... }:
 {
 
-  hardware.xpadneo.enable = true;
+  #Boot-loader settings -----------------
+  boot = {
+    loader = {
+      #systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+      grub.efiSupport = true;
+      grub.device = "nodev"; 
+      grub.useOSProber = true;
+    };
+    
+    #Linux Kernel = Bleeding-edge
+    kernelPackages = pkgs.linuxPackages_latest;
 
-  #boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.efiSupport = true;
-  boot.loader.grub.device = "nodev"; 
-  boot.loader.grub.useOSProber = true;
+    #Rust Support-------------------------
+    kernelPatches = [
+      {
+        name = "Rust Support";
+        patch = null;
+        features = {
+          rust = true;
+        };
+      }
+    ];
 
-  #IWD configurations
-  networking.networkmanager.wifi.backend = "iwd";
-  networking.wireless.iwd.enable = true;
-  networking.wireless.enable = false;
+  };
+
+  #Networking configurations
+  networking = {
+    networkmanager.wifi.backend = "iwd";
+    wireless.iwd.enable = true;
+    wireless.enable = false;
+  };
 
   time.timeZone = "America/New_York";
 
@@ -22,54 +42,56 @@
     allowReboot = false;
   };
 
-  #Rust Support-------------------------
-  boot.kernelPatches = [
-    {
-      name = "Rust Support";
-      patch = null;
-      features = {
-        rust = true;
-      };
-    }
-  ];
+  #service-settings -----------------------------
+  services = {
+    gvfs.enable = true;
+    tumbler.enable = true;
+    blueman.enable = true;
+    udisks2.enable = true;
+    power-profiles-daemon.enable = true;
+    upower.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
 
-  #Services-----------------------------
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-  services.udisks2.enable = true;
-  services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
+    picom = {
+      enable = true;
+      backend = "glx";
+      vSync = true;
+      fade = false;
+      shadow = false;
+    };
   };
 
-  services.picom = {
-    enable = true;
-    backend = "glx";
-    vSync = true;
-    fade = false;
-    shadow = false;
+  #hardware-support ----------------
+  hardware = {
+    xpadneo.enable = true;
+    bluetooth.enable = true;
   };
 
-  security.sudo.wheelNeedsPassword = false;
-  security.rtkit.enable = true;
+  security = {
+    sudo.wheelNeedsPassword = false;
+    rtkit.enable = true;
+  };
+
   programs.firefox.enable = true;
 
   fonts.packages = with pkgs; [
-#     nerd-fonts.caskaydia-cove
+     #nerd-fonts.caskaydia-cove
      nerd-fonts.jetbrains-mono
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  #Allow unfree packages
+  nixpkgs = {
+    config.allowUnfree = true;
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) 
-  [ "steam" "steam-unwrapped" ];
+    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) 
+    [ "steam" "steam-unwrapped" ];
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "26.05"; 

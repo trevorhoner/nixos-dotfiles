@@ -55,6 +55,7 @@ in
 
     programs.pywal.enable = true;
 
+    #Alliases for lsd, enhanced ls
     programs.bash = {
       shellAliases = {
          l = "lsd -l";
@@ -65,10 +66,19 @@ in
       };
     };
 
+    #Enables "nix development" automatically under a repo
     programs.direnv = {
       enable = true;
       nix-direnv.enable = true;
 
       enableBashIntegration = true;
+    };
+
+    #Auto-mounting for external drives
+    services.udiskie = {
+      enable = true;
+      automount = true;
+      notify = true;
+      tray = "auto";
     };
 }
