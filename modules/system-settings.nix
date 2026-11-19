@@ -85,7 +85,7 @@
      nerd-fonts.jetbrains-mono
   ];
 
-  #Allow unfree packages
+  #allow unfree packages
   nixpkgs = {
     config.allowUnfree = true;
 
