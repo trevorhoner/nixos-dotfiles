@@ -1,0 +1,5 @@
+game:
+  exe: /home/trevor/Games/Windows/AvP Extinction PC/avpe.exe
+  working_dir: /home/trevor/Games/Windows/AvP Extinction PC
+wine:
+  version: system

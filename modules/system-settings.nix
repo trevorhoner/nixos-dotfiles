@@ -10,7 +10,7 @@
       grub.device = "nodev"; 
       grub.useOSProber = true;
     };
-    
+
     #Linux Kernel = Bleeding-edge
     kernelPackages = pkgs.linuxPackages_latest;
 
@@ -26,12 +26,34 @@
     ];
 
   };
+  
+  #Drive-Detection-------------------------
+  security.polkit.extraConfig= ''
+    polkit.addRule(function(action, subject) {
+      if (
+        (action.id == "org.freedesktop.udisks2.filesystem-mount-system" ||
+        action.id == "org.freedesktop.udisks2.filesystem-mount" ||
+        action.id == "org.freedesktop.udisks2.filesystem-unmount-others" ||
+        action.id == "org.freedesktop.udisks2.eject-media" ||
+        action.id == "org.freedesktop.udisks2.power-off-drive") &&
+       subject.isInGroup("wheel")
+      ) {
+        return polkit.Result.YES;
+      }
+    });
+  '';
 
   #Networking configurations
   networking = {
-    networkmanager.wifi.backend = "iwd";
     wireless.iwd.enable = true;
     wireless.enable = false;
+
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+      ethernet.macAddress = "02:11:22:33:44:55";
+      wifi.macAddress = "02:aa:bb:cc:dd:ee";
+    };
   };
 
   time.timeZone = "America/New_York";

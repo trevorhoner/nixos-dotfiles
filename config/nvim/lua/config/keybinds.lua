@@ -11,6 +11,9 @@ vim.keymap.set("n", "<C-k>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")       -- center screen when looping search results
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- turn off highlight after search results
+vim.keymap.set("n","<leader>h", ":nohlsearch<CR>", {noremap=true, silent=true})
+
 -- paste and don't replace clipboard over deleted text
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])

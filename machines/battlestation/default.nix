@@ -22,7 +22,8 @@
     configFile = "/etc/wireguard/NixOS-FL.conf";
   };
   
-#Users------------------------------------
+  #Drives--------------------------------------
+  #Users------------------------------------
 	home-manager = {
 	  useGlobalPkgs = true;
 	  useUserPackages = true;
