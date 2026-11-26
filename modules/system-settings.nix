@@ -27,7 +27,9 @@
 
   };
   
-  #Drive-Detection-------------------------
+  services.gnome.gnome-keyring.enable = true;
+
+  #Drive-Detection & ProtonVPN fix-------------------------
   security.polkit.extraConfig= ''
     polkit.addRule(function(action, subject) {
       if (
@@ -36,10 +38,15 @@
         action.id == "org.freedesktop.udisks2.filesystem-unmount-others" ||
         action.id == "org.freedesktop.udisks2.eject-media" ||
         action.id == "org.freedesktop.udisks2.power-off-drive") &&
-       subject.isInGroup("wheel")
+        subject.isInGroup("wheel")
       ) {
         return polkit.Result.YES;
       }
+      
+      if (action.id.indexOf("org.freedesktop.NetworkManager.") == 0 &&
+        subject.user == "trevor") {
+        return polkit.Result.YES;
+        }
     });
   '';
 
@@ -54,6 +61,7 @@
       ethernet.macAddress = "02:11:22:33:44:55";
       wifi.macAddress = "02:aa:bb:cc:dd:ee";
     };
+
   };
 
   time.timeZone = "America/New_York";
